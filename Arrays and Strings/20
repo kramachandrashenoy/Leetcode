@@ -60,4 +60,29 @@ class Solution(object):
         if len(c)>0:
             return False
         return True
+
+Optimal solution:
+
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        stack=[]
+        mapp={')':'(',']':'[','}':'{'}
+
+        for i in range(len(s)):
+            if s[i] in mapp:
+                if stack:
+                    if mapp[s[i]]!=stack.pop():
+                        return False
+                else:
+                    return False
+            else:
+                stack.append(s[i])
+        if len(stack) >0:
+            return False
+        else:
+            return True
         
