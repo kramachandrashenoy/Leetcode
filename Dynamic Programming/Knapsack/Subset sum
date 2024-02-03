@@ -1,0 +1,20 @@
+class Solution:
+    def isSubsetSum (self, N, arr, sum):
+        # code here 
+        n=len(arr)
+        m=sum
+        t=[[False for i in range(m+1)]for j in range(n+1)]
+                
+        for i in range(n+1):
+            for j in range(m+1):
+                if i==0:
+                    t[i][j]=False
+                elif j==0:
+                    t[i][j]=True
+                elif int(arr[i-1])<=j:
+                    t[i][j]=t[i-1][j-int(arr[i-1])] or t[i-1][j]
+                else:
+                    t[i][j]=t[i-1][j]
+        return t[n][m]
+
+
