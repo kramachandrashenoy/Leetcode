@@ -1,0 +1,2 @@
+# DIffernece between 0-1 knapsack and unbounded knapsack is that in unbounded knapsack if the item is considered once it might be taken into consideration again which is not the case in 0-1 knapsack.
+
