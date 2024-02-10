@@ -1,0 +1,9 @@
+class solution:
+  def func():
+    if m==0 or n==0:
+      
+    
+
+  def mainfunc(a,b,m,n):
+    t=[[-1 for i in range(n+1)]for j in range(m+1)]
+    print("The length of the longest commom subsequence is "+str(func(a,b,m,n)))
