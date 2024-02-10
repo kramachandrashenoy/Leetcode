@@ -1,3 +1,4 @@
+# If there is a discontinuity we make the cell 0 and to calculate the longest substring we go through the matrix and store the maximum value
 def func(a,b,m,n):
   t=[[0 for i in range(n+1)] for j in range(m+1)]
   maxi=0
