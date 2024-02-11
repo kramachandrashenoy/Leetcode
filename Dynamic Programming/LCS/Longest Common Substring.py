@@ -13,3 +13,18 @@ def func(a,b,m,n):
           maxi=max(maxi ,t[i][j])
         else:
           t[i][j]=0
+    # Printing the LCS
+  i=m
+  j=n
+  ans=str()
+  while(i>0 and j>0):
+    if a[m-1]==b[n-1]:
+      ans+=a[m-1]
+      i-=1
+      j-=1
+    else:
+      if t[i-1][j]>t[i][j-1]:
+        i-=1
+      else:
+        j-=1
+    print("The Longest common subsequence is "+ans[::-1])
