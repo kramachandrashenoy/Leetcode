@@ -18,8 +18,8 @@ def func(a,b,m,n):
   j=n
   ans=str()
   while(i>0 and j>0):
-    if a[m-1]==b[n-1]:
-      ans+=a[m-1]
+    if a[i-1]==b[j-1]:
+      ans+=a[i-1]
       i-=1
       j-=1
     else:
