@@ -1,3 +1,4 @@
+The major difference is that we consider the duplicate of the string and then we find the LCS with the condition i!=j so that all the other repeating alphabets can be considered.
 class Solution:
 	def LongestRepeatingSubsequence(self, str):
 		return longestRepeatingSubsequence(str, str, len(str), len(str))
