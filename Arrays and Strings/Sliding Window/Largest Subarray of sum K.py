@@ -31,5 +31,28 @@ def func(arr,k):
           l[summ]=1
     j+=1
   return maxi
+
+
+If negative numbers are included then we consider the following code( We use prefix sum concept)
+
+def func(arr, k):
+    l = {}
+    i = j = 0
+    summ = 0
+    maxi = 0
+    n = len(arr)
+    while j < n:
+        summ += arr[j]
+        if summ == k:
+            maxi = max(maxi, j - i + 1)
+        if summ - k in l:
+            maxi = max(maxi, j - l[summ - k])
+        if summ not in l:
+            l[summ] = j
+        j += 1
+    return maxi
+
+print("The answer is " + str(func([4, 1, 1, 2, 1, 5], 5)))
+
       
   
