@@ -1,0 +1,37 @@
+Longest Substring With K Unique Characters - Variable size window
+
+def longest_sub(arr,k):
+    i,j = 0,0
+    n = len(arr)
+    dicty = {}
+    max_sub = 0
+    while(j<n):
+        if arr[j] in dicty.keys():
+            dicty[arr[j]] += 1
+        else:
+            dicty[arr[j]] = 1 
+
+        if len(dicty)<k:
+              j+=1
+            
+        elif len(dicty)==k:
+            max_sub = max(sum(dicty.values()),max_sub)
+            j+=1
+        elif len(dicty)>k:
+            while(len(dicty)>k):
+                if arr[i] in dicty.keys():
+                    dicty[arr[i]] -= 1
+                    if dicty[arr[i]] == 0:
+                        del dicty[arr[i]]
+                i+=1
+            j+=1
+    if max_sub==0:
+        return -1 
+    else:
+        return max_sub
+
+    
+a =list("abcabcabcabcabcabcaba")
+k = 2
+
+print(longest_sub(a,k))
