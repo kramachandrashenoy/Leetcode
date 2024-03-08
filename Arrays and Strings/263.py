@@ -17,3 +17,27 @@ Example 3:
 Input: n = 14
 Output: false
 Explanation: 14 is not ugly since it includes the prime factor 7.
+
+Solution:
+
+class Solution(object):
+    def isUgly(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        def func(n):
+            if n==1:
+                return True
+            elif n%2==0:
+                return func(n//2)
+            elif n%3==0:
+                return func(n//3)
+            elif n%5==0:
+                return func(n//5)
+            else:
+                return False
+        if n==0:
+            return False
+        return func(n)
+
